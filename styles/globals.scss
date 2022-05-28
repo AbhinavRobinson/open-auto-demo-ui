@@ -1,0 +1,7 @@
+@import 'scss-reset/_reset.scss';
+
+* {
+  // Since we are only using this font, it's okay to be !important
+  // !DEV in case there are more fonts to be used, remove !important.
+  font-family: 'Open Sans' !important;
+}
