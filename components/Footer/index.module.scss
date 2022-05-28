@@ -1,0 +1,53 @@
+@import '/styles/mixins.scss';
+
+.wrapper {
+  @include auto_width;
+  margin: auto;
+  flex-direction: column;
+  color: #eee;
+  padding: 2rem 0 4rem 0;
+  border-top: 1px solid #222;
+  * {
+    @include flex;
+    // reseting media queries on reused components
+    display: flex !important;
+  }
+  & > ul {
+    justify-content: space-between;
+    width: 100%;
+  }
+  [datatype='media'] {
+    gap: 2rem;
+    svg {
+      width: 24px;
+      height: auto;
+      &:first-child {
+        width: 12px;
+      }
+    }
+  }
+  [datatype='links'] {
+    @include flex;
+    // @dev for some reason desktop design is missing this, so you can remove this if needed.
+    display: none !important;
+    gap: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    & > *,
+    & > * > *:not([datatype='media']) {
+      gap: 3rem;
+      flex-direction: column;
+    }
+    [datatype='media'] {
+      width: 90%;
+      justify-content: space-between;
+    }
+    [datatype='contact'],
+    [datatype='links'] {
+      // check note from normal selector
+      display: flex !important;
+      width: 85vw;
+      justify-content: space-between;
+    }
+  }
+}

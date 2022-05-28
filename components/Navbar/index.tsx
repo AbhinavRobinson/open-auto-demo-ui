@@ -4,7 +4,7 @@ import Logo from '../../public/logo.svg'
 import Call from '../../public/call.svg'
 import Email from '../../public/email.svg'
 
-const Navbar = () => {
+const Navbar: React.FC<{ noCTA?: boolean }> = ({ noCTA = false }) => {
   return (
     <nav className={styles.wrapper}>
       <ul>
@@ -12,7 +12,7 @@ const Navbar = () => {
           <Logo />
         </li>
         <li>
-          <ul>
+          <ul datatype='contact'>
             <li datatype='text'>
               <Call />
               +769 586 4558
@@ -21,9 +21,11 @@ const Navbar = () => {
               <Email />
               service@openauto.ca
             </li>
-            <li>
-              <button>Download the mobile app</button>
-            </li>
+            {!noCTA && (
+              <li>
+                <button>Download the mobile app</button>
+              </li>
+            )}
           </ul>
         </li>
       </ul>

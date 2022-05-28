@@ -5,19 +5,20 @@
   $color: #ccc;
   width: 100%;
   color: $color;
-  ul {
+  * {
     @include flex;
+  }
+  ul {
     gap: 3rem;
   }
   & > ul {
-    @include flex;
     @include auto_width;
     justify-content: space-between;
     margin: 3rem auto;
     :not(.logo) {
       svg {
         width: 0.75rem;
-        height: 0.75rem;
+        height: auto;
         margin-right: 10px;
       }
       @media screen and (max-width: 1080px) {
@@ -38,7 +39,6 @@
     }
   }
   button {
-    @include flex;
     color: $color;
     font-weight: bold;
     border: 2px solid $color;
