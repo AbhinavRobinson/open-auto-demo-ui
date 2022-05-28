@@ -1,0 +1,48 @@
+@import '/styles/mixins.scss';
+
+.wrapper {
+  @include flex;
+  $color: #ccc;
+  width: 100%;
+  color: $color;
+  ul {
+    @include flex;
+    gap: 3rem;
+  }
+  & > ul {
+    @include flex;
+    @include auto_width;
+    justify-content: space-between;
+    margin: 3rem auto;
+    :not(.logo) {
+      svg {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin-right: 10px;
+      }
+      @media screen and (max-width: 1080px) {
+        svg {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 960px) {
+        [datatype='text'] {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+  button {
+    @include flex;
+    color: $color;
+    font-weight: bold;
+    border: 2px solid $color;
+    border-radius: 1.75rem;
+    padding: 1rem 1.5rem;
+  }
+}
