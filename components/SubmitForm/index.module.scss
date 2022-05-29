@@ -1,0 +1,35 @@
+@import '/styles/mixins.scss';
+
+.form {
+  @include flex;
+  flex-direction: column;
+  width: max(300px, 66%);
+  gap: 1rem;
+  .input {
+    width: 100%;
+    color: #aaa;
+    input {
+      width: 100%;
+      border: 1px solid #3c3c3c;
+      border-radius: 1.75rem;
+      padding: 1rem 1.5rem;
+      background-color: transparent;
+      &.error {
+        border: 1px solid #b03232;
+      }
+    }
+  }
+  button {
+    color: #aaa;
+    font-weight: bold;
+    border: 1px solid #3c3c3c;
+    border-radius: 1.75rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    &:hover {
+      color: #fff;
+      border: 1px solid #7e10ff;
+      background-color: #7e10ff;
+    }
+  }
+}

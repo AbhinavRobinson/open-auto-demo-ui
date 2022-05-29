@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from './index.module.scss'
+import SubmitForm from '../SubmitForm'
 
 const CityscapeHero = () => {
   return (
@@ -12,6 +13,7 @@ const CityscapeHero = () => {
             Open Auto Soothes the hassle of maintaining your vehicle and helps
             you deal with unexpected repairs worry-free.
           </p>
+          <SubmitForm />
         </div>
         <Image
           src='/Pickup_Illustration.png'
