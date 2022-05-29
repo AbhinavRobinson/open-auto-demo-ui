@@ -14,7 +14,7 @@ const CityscapeHero = () => {
     <div className={styles.wrapper}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h1>Vechile Maintainance From The Comfort Of Your Home</h1>
+          <h1>Vehicle Maintainance From The Comfort Of Your Home</h1>
           <p>
             Open Auto Soothes the hassle of maintaining your vehicle and helps
             you deal with unexpected repairs worry-free.
