@@ -11,21 +11,21 @@
     width: 100%;
     justify-content: space-between;
     gap: 2rem;
-    .content {
-      @include flex;
-      flex-direction: column;
-      gap: 3rem;
-      width: 35%;
-      min-width: 400px;
-      color: #ccc;
-      align-items: flex-start;
-    }
     @media screen and (max-width: 768px) {
       flex-direction: column;
       gap: 5rem;
       .content {
-        width: 100%;
+        width: clamp(200px, 100%, 100%);
+        min-width: 100%;
       }
+    }
+    .content {
+      @include flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: clamp(400px, 35%, 100%);
+      color: #ccc;
+      align-items: flex-start;
     }
   }
   .submenu {
@@ -54,15 +54,18 @@
       right: 0;
       gap: 2rem;
       transform: translateY(1rem);
+      &:hover {
+        cursor: pointer;
+      }
+      @media screen and (max-width: 768px) {
+        right: calc(50% - 118px);
+      }
       svg {
         width: 24px;
         height: auto;
         &:first-child {
           width: 12px;
         }
-      }
-      @media screen and (max-width: 768px) {
-        right: calc(50% - 118px);
       }
     }
   }

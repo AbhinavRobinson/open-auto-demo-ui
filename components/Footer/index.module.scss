@@ -25,6 +25,9 @@
         width: 12px;
       }
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
   [datatype='links'] {
     @include flex;
@@ -33,6 +36,9 @@
     gap: 1rem;
   }
   @media screen and (max-width: 768px) {
+    * {
+      flex-wrap: wrap;
+    }
     & > *,
     & > * > *:not([datatype='media']) {
       gap: 3rem;
