@@ -1,0 +1,20 @@
+@import '/styles/mixins.scss';
+
+.wrapper {
+  @include flex;
+  @include auto_width;
+  margin: 4rem auto;
+  .main {
+    @include flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    .content {
+      @include flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 42%;
+      color: #ccc;
+    }
+  }
+}

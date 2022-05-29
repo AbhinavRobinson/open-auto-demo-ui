@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import CityscapeHero from '../components/CityscapeHero'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.scss'
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/hoverlogo.svg' />
       </Head>
       <Navbar />
-      <div className={styles.main}>MAIN</div>
+      <CityscapeHero />
       <Footer />
     </div>
   )
