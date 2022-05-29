@@ -1,4 +1,18 @@
 .container {
-  background-color: rgb(18, 24, 32);
   color: white;
+  .top {
+    // gradiant
+    background-image: linear-gradient(
+      to bottom left,
+      rgb(25, 32, 42),
+      rgb(15, 20, 29)
+    );
+  }
+  .bottom {
+    background-image: linear-gradient(
+      to bottom left,
+      rgb(25, 32, 42),
+      rgb(15, 20, 29)
+    );
+  }
 }

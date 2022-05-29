@@ -5,5 +5,5 @@
 }
 
 @mixin auto_width {
-  width: clamp(300px, 90vw, 1500px);
+  width: clamp(300px, calc(100vw - 128px), 1500px);
 }

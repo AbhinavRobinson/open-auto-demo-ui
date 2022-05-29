@@ -45,15 +45,15 @@
       flex-direction: column;
     }
     [datatype='media'] {
-      width: 90%;
+      width: 100%;
       justify-content: space-between;
     }
     [datatype='contact'],
     [datatype='links'] {
       // check note from normal selector
       display: flex !important;
-      width: 85vw;
-      justify-content: space-between;
+      width: 100%;
+      justify-content: center;
     }
   }
 }

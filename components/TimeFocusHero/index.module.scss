@@ -3,11 +3,12 @@
 .wrapper {
   @include flex;
   @include auto_width;
-  margin: 6rem auto 2rem auto;
+  margin: 0 auto;
+  padding: 4rem 0;
   flex-direction: column;
   gap: 2rem;
   @media screen and (max-width: 768px) {
-    margin: 10rem auto 4rem auto;
+    padding: 10rem auto 4rem auto;
   }
   .main {
     @include flex;
