@@ -3,7 +3,9 @@
 .wrapper {
   @include flex;
   @include auto_width;
-  margin: 4rem auto;
+  margin: 6rem auto;
+  flex-direction: column;
+  gap: 2rem;
   .main {
     @include flex;
     width: 100%;
@@ -12,10 +14,56 @@
     .content {
       @include flex;
       flex-direction: column;
-      gap: 2rem;
-      width: 42%;
+      gap: 3rem;
+      width: 35%;
+      min-width: 400px;
       color: #ccc;
       align-items: flex-start;
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 5rem;
+      .content {
+        width: 100%;
+      }
+    }
+  }
+  .submenu {
+    position: relative;
+    width: 100%;
+    .logo {
+      svg {
+        position: absolute;
+        width: 3rem;
+        height: auto;
+        top: 0;
+        right: calc(50% - 1.25rem);
+        transition-duration: 250ms;
+        &:hover {
+          cursor: pointer;
+          transform: rotateZ(180deg);
+        }
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+    .media {
+      @include flex;
+      position: absolute;
+      right: 0;
+      gap: 2rem;
+      transform: translateY(1rem);
+      svg {
+        width: 24px;
+        height: auto;
+        &:first-child {
+          width: 12px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        right: calc(50% - 118px);
+      }
     }
   }
 }
