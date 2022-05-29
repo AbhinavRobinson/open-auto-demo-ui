@@ -8,25 +8,30 @@ import { Data } from '../../pages/api/submit'
 const SubmitForm = () => (
   <Formik
     initialValues={{ email: '', name: '' }}
-    onSubmit={async (values, { setSubmitting }) => {
-      try {
-        const res = await fetch('/api/submit', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        })
-        const data = (await res.json()) as Data
-        console.log(data)
-        if (!res.ok) {
-          throw data.message
+    onSubmit={(values, { setSubmitting }) => {
+      const submitToDB = async () => {
+        try {
+          const res = await fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(values),
+          })
+          const data = (await res.json()) as Data
+          if (!res.ok) {
+            throw data.message
+          }
+        } catch (error: any) {
+          throw error
         }
-        toast.success(data.message)
-      } catch (error: any) {
-        toast.error(error)
       }
+      toast.promise(submitToDB(), {
+        loading: 'Submitting...',
+        success: 'Thanks for your submission!',
+        error: 'Already Subscribed!',
+      })
       setTimeout(() => {
         setSubmitting(false)
       }, 1500)
