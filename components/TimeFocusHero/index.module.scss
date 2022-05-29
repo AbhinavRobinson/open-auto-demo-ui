@@ -1,0 +1,51 @@
+@import '/styles/mixins.scss';
+
+.wrapper {
+  @include flex;
+  @include auto_width;
+  margin: 6rem auto 2rem auto;
+  flex-direction: column;
+  gap: 2rem;
+  @media screen and (max-width: 768px) {
+    margin: 10rem auto 4rem auto;
+  }
+  .main {
+    @include flex;
+    width: 100%;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap: 5rem;
+    }
+    .content {
+      @include flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: clamp(400px, 50%, 100%);
+      align-items: flex-start;
+      h1 {
+        color: #ccc;
+      }
+      p {
+        color: #777;
+        line-height: 2;
+      }
+      @media screen and (max-width: 768px) {
+        text-align: center;
+        width: clamp(200px, 100%, 100%);
+        min-width: 100%;
+        align-items: center;
+        button {
+          width: 100%;
+        }
+      }
+    }
+    & svg {
+      width: 40vw;
+      height: auto;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}

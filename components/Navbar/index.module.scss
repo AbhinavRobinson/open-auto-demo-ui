@@ -20,12 +20,12 @@
         height: auto;
         margin-right: 10px;
       }
-      @media screen and (max-width: 1080px) {
+      @media screen and (max-width: 1200px) {
         svg {
           display: none;
         }
       }
-      @media screen and (max-width: 975px) {
+      @media screen and (max-width: 1080px) {
         [datatype='text'] {
           display: none;
         }
