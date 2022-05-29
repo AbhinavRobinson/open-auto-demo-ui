@@ -36,6 +36,9 @@
         width: clamp(200px, 100%, 100%);
         min-width: 100%;
         align-items: center;
+        h1 {
+          font-size: 2rem;
+        }
         button {
           width: 100%;
         }
