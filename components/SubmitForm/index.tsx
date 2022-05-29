@@ -2,14 +2,34 @@ import React from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import styles from './index.module.scss'
+import toast from 'react-hot-toast'
+import { Data } from '../../pages/api/submit'
 
 const SubmitForm = () => (
   <Formik
     initialValues={{ email: '', name: '' }}
-    onSubmit={(values, { setSubmitting }) => {
+    onSubmit={async (values, { setSubmitting }) => {
+      try {
+        const res = await fetch('/api/submit', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        })
+        const data = (await res.json()) as Data
+        console.log(data)
+        if (!res.ok) {
+          throw data.message
+        }
+        toast.success(data.message)
+      } catch (error: any) {
+        toast.error(error)
+      }
       setTimeout(() => {
         setSubmitting(false)
-      }, 500)
+      }, 1500)
     }}
     validationSchema={Yup.object().shape({
       email: Yup.string().email().required('Please provide your email.'),
